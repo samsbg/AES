@@ -4,8 +4,8 @@ using namespace std;
 
 // Test 1/2 for substitution
 bool subByteSubstitutionTest1() {
-    uint8_t result = sBSubstitution((uint8_t) 0xcf);
-    uint8_t expected = 0x8a;
+    unsigned char result = sBSubstitution((unsigned char) 0xcf);
+    unsigned char expected = 0x8a;
 
     if (result != expected) {
         cout << "SubByte substitution T1 failed" << endl
@@ -18,8 +18,8 @@ bool subByteSubstitutionTest1() {
 
 // Test 2/2 for substitution
 bool subByteSubstitutionTest2() {
-    uint8_t result = sBSubstitution((uint8_t)0x4f);
-    uint8_t expected = 0x84;
+    unsigned char result = sBSubstitution((unsigned char)0x4f);
+    unsigned char expected = 0x84;
 
     if (result != expected) {
         cout << "SubByte substitution T2 failed" << endl
@@ -32,8 +32,8 @@ bool subByteSubstitutionTest2() {
 
 // Test 1/2 for inverse substitution
 bool subByteSubstitutionTest3() {
-    uint8_t result = invSBSubstitution((uint8_t)0xeb);
-    uint8_t expected = 0x3c;
+    unsigned char result = invSBSubstitution((unsigned char)0xeb);
+    unsigned char expected = 0x3c;
 
     if (result != expected) {
         cout << "SubByte substitution T3 failed" << endl
@@ -46,8 +46,8 @@ bool subByteSubstitutionTest3() {
 
 // Test 2/2 for inverse substitution
 bool subByteSubstitutionTest4() {
-    uint8_t result = invSBSubstitution((uint8_t)0x01);
-    uint8_t expected = 0x09;
+    unsigned char result = invSBSubstitution((unsigned char)0x01);
+    unsigned char expected = 0x09;
 
     if (result != expected) {
         cout << "SubByte substitution T4 failed" << endl
