@@ -17,7 +17,7 @@ bool shiftRowsTest1()
         {0x5d, 0x52, 0x11, 0x98},
         {0x30, 0xae, 0xf1, 0xe5}};
 
-    // Metod is called, it modifies the state variable in the method, there is no need to return it back
+    // The method is called. It modifies the state variable in the method. There is no need to return it back.
     shiftRows(state);
 
     for (int i = 0; i < 4; i++)
@@ -52,7 +52,7 @@ bool shiftRowsTest2()
         {0x87, 0x53, 0xd2, 0x96},
         {0x3b, 0x89, 0xf1, 0x1a}};
 
-    // Metod is called, it modifies the state variable in the method, there is no need to return it back
+    // The method is called. It modifies the state variable in the method. There is no need to return it back.
     shiftRows(state);
 
     for (int i = 0; i < 4; i++)
@@ -80,14 +80,14 @@ bool shiftRowsTest3()
         {0xcf, 0x11, 0xd6, 0x5a},
         {0x7b, 0xdf, 0xb5, 0xb8}};
 
-    // Expected resut
+    // Expected result
     unsigned char expected[4][4] = {
         {0xac, 0xef, 0x13, 0x45},
         {0xc1, 0xb5, 0x23, 0x73},
         {0xd6, 0x5a, 0xcf, 0x11},
         {0xb8, 0x7b, 0xdf, 0xb5}};
 
-    // Metod is called, it modifies the state variable in the method, there is no need to return it back
+    // The method is called. It modifies the state variable in the method. There is no need to return it back.
     shiftRows(state);
 
     for (int i = 0; i < 4; i++)
@@ -122,7 +122,7 @@ bool invShiftRowsTest1()
         {0x5d, 0x52, 0x11, 0x98},
         {0x30, 0xae, 0xf1, 0xe5}};
 
-    // Metod is called, it modifies the state variable in the method, there is no need to return it back
+    // The method is called. It modifies the state variable in the method. There is no need to return it back.
     invShiftRows(state);
 
     for (int i = 0; i < 4; i++)
@@ -157,7 +157,7 @@ bool invShiftRowsTest2()
         {0x87, 0x53, 0xd2, 0x96},
         {0x3b, 0x89, 0xf1, 0x1a}};
 
-    // Metod is called, it modifies the state variable in the method, there is no need to return it back
+    // The method is called. It modifies the state variable in the method. There is no need to return it back.
     invShiftRows(state);
 
     for (int i = 0; i < 4; i++)
@@ -192,7 +192,7 @@ bool invShiftRowsTest3()
         {0xd6, 0x5a, 0xcf, 0x11},
         {0xb8, 0x7b, 0xdf, 0xb5}};
 
-    // Metod is called, it modifies the state variable in the method, there is no need to return it back
+    // The method is called. It modifies the state variable in the method. There is no need to return it back.
     invShiftRows(state);
 
     for (int i = 0; i < 4; i++)
@@ -224,10 +224,10 @@ int main()
     if (shiftRowsTest3())
         test++;
 
-    cout << "Numbr of test passed " << test << "/3" << endl;
+    cout << "Number of test passed " << test << "/3" << endl;
     cout << "Number of test Failed " << 3 - test << endl;
 
-    cout << ((test == 3) ? "Task Succes " : "Task Failed") << endl;
+    cout << ((test == 3) ? "Task Success " : "Task Failed") << endl;
 
     cout << endl;
     int invTest{};
@@ -241,8 +241,8 @@ int main()
     if (invShiftRowsTest3())
         invTest++;
 
-    cout << "Numbr of test passed " << invTest << "/3" << endl;
+    cout << "Numbs of test passed " << invTest << "/3" << endl;
     cout << "Number of test Failed " << 3 - invTest << endl;
 
-    cout << ((invTest == 3) ? "Task Succes " : "Task Failed") << endl;
+    cout << ((invTest == 3) ? "Task Success " : "Task Failed") << endl;
 }
