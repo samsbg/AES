@@ -1,0 +1,20 @@
+
+
+void mixColumns(unsigned char state[4][4])
+{
+    unsigned char control[4][4] = {
+        {0x02, 0x03, 0x01, 0x01},
+        {0x01, 0x02, 0x03, 0x01},
+        {0x01, 0x01, 0x02, 0x03},
+        {0x03, 0x01, 0x01, 0x02}};
+
+        
+}
+
+
+void invMixColumns(unsigned char state[4][4])
+{
+
+
+
+}
