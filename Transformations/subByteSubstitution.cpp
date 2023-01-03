@@ -1,4 +1,4 @@
-using namespace std;
+
 
 // These methods are meant to be private and used for the subByte and key transformations methods
 // When moved to the transformation methods file, the sBox could become global variables
