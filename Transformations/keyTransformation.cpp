@@ -2,29 +2,50 @@
 using namespace std;
 
 // Uses subbyte substitution method
-// Only works for 128 key, would need new methods or adjusting for 192 and 256
+// Adjusted to work on 128, 192 or 256 set up in the second parameter
+// Should technically work with other size, but since 256 has special rules, should be on the lookout for that
+// Should later on restrict it to AES 128, 192, 256
 
-void keyTransformation128(unsigned char keys[11][4][4]) {
-    int rcon = 1, temp;
+void keyTransformation(unsigned char keys[][4][4], int sizeSelected) {
+    int rcon = 1;
+    sizeSelected /= 32;
 
-    for (int i = 1; i < 11; i++) {
-        //First column of key
+    for (int count = 0; count < (28 + sizeSelected * 3); count++) {
+
+        int currentKey = (count + sizeSelected) / 4;
+        int currentColumn = (count + (sizeSelected % 4)) % 4;
+
+        int sixBeforeKey = count / 4;
+        int sixBeforeColumn = count % 4;
+
+        int lastColumnKey = (count + sizeSelected - 1) / 4;
+        int lastColumn = (count + ((sizeSelected - 1) % 4)) % 4;
+
         for (int j = 0; j < 4; j++) {
-            keys[i][j][0] = keys[i - 1][(j+1) % 4][3]; // Rotation
-            keys[i][j][0] = sBSubstitution(keys[i][j][0]); // Substitution
-            keys[i][j][0] = keys[i][j][0] ^ keys[i - 1][j][0] ^ (j == 0 ? rcon : 0); // XOR operation
-        }
-        //Rest of columns
-        for (int j = 0; j < 4; j++) {
-            for (int k = 1; k < 4; k++) {
-                keys[i][j][k] = keys[i - 1][j][k] ^ keys[i][j][k-1]; //XOR operation
-            } 
-        }
-        //Get next Rcon
-        if(rcon >= 128) {
-            rcon = (rcon*2) ^ 283;
-        } else {
-            rcon = rcon*2;
+            // First column
+            if(!(count % sizeSelected)) {
+                keys[currentKey][j][currentColumn] = keys[lastColumnKey][(j + 1) % 4][lastColumn]; // Rotation
+                keys[currentKey][j][currentColumn] = sBSubstitution(keys[currentKey][j][currentColumn]); // Substitution
+                keys[currentKey][j][currentColumn] ^= keys[sixBeforeKey][j][sixBeforeColumn] ^ (!j ? rcon : 0); // XOR operation
+
+                if(!j){
+                    rcon *= 2;
+                    if(rcon >= 256) {
+                        rcon ^= 283;
+                    }
+                }
+            // Rest of the columns
+            } else {
+                // Size 256 has special rules
+                if(sizeSelected == 8 && count % 8 == 4) {
+                    keys[currentKey][j][currentColumn] = keys[lastColumnKey][j][lastColumn]; // Rotation
+                    keys[currentKey][j][currentColumn] = sBSubstitution(keys[currentKey][j][currentColumn]); // Substitution
+                    keys[currentKey][j][currentColumn] ^= keys[sixBeforeKey][j][sixBeforeColumn]; // XOR operation
+                } else {
+                    keys[currentKey][j][currentColumn] = keys[lastColumnKey][j][lastColumn] ^ keys[sixBeforeKey][j][sixBeforeColumn]; // XOR operation
+                }
+            }
         }
     }
+    
 }
