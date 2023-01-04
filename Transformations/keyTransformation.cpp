@@ -1,5 +1,5 @@
 #include "subByteSubstitution.cpp"
-using namespace std;
+
 
 // Uses subbyte substitution method
 // Adjusted to work on 128, 192 or 256 set up in the second parameter
