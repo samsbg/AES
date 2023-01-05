@@ -1,5 +1,5 @@
 #include <iostream>
-#include "mixColumns.cpp"
+#include "allMethods.cpp"
 using namespace std;
 
 // Test case 1 for mixColumns

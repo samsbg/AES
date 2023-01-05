@@ -1,5 +1,5 @@
 #include <iostream>
-#include "shiftRows.cpp"
+#include "allMethods.cpp"
 using namespace std;
 
 bool shiftRowsTest1()

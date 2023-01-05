@@ -1,4 +1,4 @@
-#include "AddRoundKey.cpp"
+#include "allMethods.cpp"
 #include <iostream>
 using namespace std;
 

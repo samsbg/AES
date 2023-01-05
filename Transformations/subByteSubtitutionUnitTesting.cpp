@@ -1,5 +1,5 @@
 #include <iostream>
-#include "subByteSubstitution.cpp"
+#include "allMethods.cpp"
 using namespace std;
 
 // Test 1/2 for substitution
