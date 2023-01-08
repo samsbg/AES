@@ -1,6 +1,8 @@
 #include "subByteSubstitutionUnitTesting.cpp"
 #include "addRoundKeyUnitTesting.cpp"
 #include "keyTransformationUnitTesting.cpp"
+#include "mixColumnsUnitTesting.cpp"
+#include "shiftRowsUnitTesting.cpp"
 
 #include <iostream>
 using namespace std;
@@ -176,6 +178,121 @@ int main()
 
     correctCount = 0;
     count = 0;
+
+    if (mixColumnsTest1())
+    {
+        correctCount++;
+        totalCorrectCount++;
+    }
+    count++;
+    totalCount++;
+
+    if (mixColumnsTest2())
+    {
+        correctCount++;
+        totalCorrectCount++;
+    }
+    count++;
+    totalCount++;
+
+    if (mixColumnsTest3())
+    {
+        correctCount++;
+        totalCorrectCount++;
+    }
+    count++;
+    totalCount++;
+
+    cout << "Mix Columns test " << correctCount << "/" << count << ": " << ((correctCount == count) ? "Success" : "Failed") << endl;
+
+    correctCount = 0;
+    count = 0;
+
+    if (invMixColumnsTest1())
+    {
+        correctCount++;
+        totalCorrectCount++;
+    }
+    count++;
+    totalCount++;
+
+    if (invMixColumnsTest2())
+    {
+        correctCount++;
+        totalCorrectCount++;
+    }
+    count++;
+    totalCount++;
+
+    if (invMixColumnsTest3())
+    {
+        correctCount++;
+        totalCorrectCount++;
+    }
+    count++;
+    totalCount++;
+
+    cout << "Inv Mix Columns test " << correctCount << "/" << count << ": " << ((correctCount == count) ? "Success" : "Failed") << endl;
+
+    correctCount = 0;
+    count = 0;
+
+    if (shiftRowsTest1())
+    {
+        correctCount++;
+        totalCorrectCount++;
+    }
+    count++;
+    totalCount++;
+
+    if (shiftRowsTest2())
+    {
+        correctCount++;
+        totalCorrectCount++;
+    }
+    count++;
+    totalCount++;
+
+    if (shiftRowsTest3())
+    {
+        correctCount++;
+        totalCorrectCount++;
+    }
+    count++;
+    totalCount++;
+
+    cout << "Shift Rows test " << correctCount << "/" << count << ": " << ((correctCount == count) ? "Success" : "Failed") << endl;
+
+    correctCount = 0;
+    count = 0;
+
+    if (invShiftRowsTest1())
+    {
+        correctCount++;
+        totalCorrectCount++;
+    }
+    count++;
+    totalCount++;
+
+    if (invShiftRowsTest2())
+    {
+        correctCount++;
+        totalCorrectCount++;
+    }
+    count++;
+    totalCount++;
+    
+    if (invShiftRowsTest3())
+    {
+        correctCount++;
+        totalCorrectCount++;
+    }
+    count++;
+    totalCount++;
+
+    cout << "Inv Shift Rows test " << correctCount << "/" << count << ": " << ((correctCount == count) ? "Success" : "Failed") << endl;
+
+
 
     cout << " -> AES methods test " << totalCorrectCount << "/" << totalCount << ": " << ((totalCorrectCount == totalCount) ? "Success" : "Failed") << endl;
 
