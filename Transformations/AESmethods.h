@@ -1,7 +1,7 @@
 #ifndef AESMETHODS_H
 #define AESMETHODS_H
 
-//#include "AESmethods.cpp"
+
 
 // These methods are meant to be private and used for the subByte and key transformations methods
 unsigned char sBSubstitution(unsigned char initial);
