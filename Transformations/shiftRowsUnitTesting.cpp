@@ -1,5 +1,5 @@
 #include <iostream>
-#include "shiftRows.cpp"
+#include "AESmethods.cpp"
 using namespace std;
 
 bool shiftRowsTest1()
@@ -211,38 +211,3 @@ bool invShiftRowsTest3()
     return true;
 }
 
-int main()
-{
-    int test{};
-    cout << "Unit Testing For ShiftRows Methods" << endl;
-    cout << "Number of tests: 3" << endl;
-
-    if (shiftRowsTest1())
-        test++;
-    if (shiftRowsTest2())
-        test++;
-    if (shiftRowsTest3())
-        test++;
-
-    cout << "Number of test passed " << test << "/3" << endl;
-    cout << "Number of test Failed " << 3 - test << endl;
-
-    cout << ((test == 3) ? "Task Success " : "Task Failed") << endl;
-
-    cout << endl;
-    int invTest{};
-    cout << "Unit Testing For InvShiftRows Methods" << endl;
-    cout << "Number of tests: 3" << endl;
-
-    if (invShiftRowsTest1())
-        invTest++;
-    if (invShiftRowsTest2())
-        invTest++;
-    if (invShiftRowsTest3())
-        invTest++;
-
-    cout << "Numbs of test passed " << invTest << "/3" << endl;
-    cout << "Number of test Failed " << 3 - invTest << endl;
-
-    cout << ((invTest == 3) ? "Task Success " : "Task Failed") << endl;
-}

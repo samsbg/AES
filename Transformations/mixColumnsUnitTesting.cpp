@@ -1,5 +1,5 @@
 #include <iostream>
-#include "mixColumns.cpp"
+#include "AESmethods.cpp"
 using namespace std;
 
 // Test case 1 for mixColumns
@@ -218,42 +218,4 @@ bool invMixColumnsTest3()
     }
 
     return true;
-}
-
-int main()
-{
-    // Unit Testing for MixColumns
-    int test{};
-    cout << "Unit Testing For MixColumns Methods" << endl;
-    cout << "Number of tests: 3" << endl;
-
-    if (mixColumnsTest1())
-        test++;
-    if (mixColumnsTest2())
-        test++;
-    if (mixColumnsTest3())
-        test++;
-
-    cout << "Number of test passed " << test << "/3" << endl;
-    cout << "Number of test Failed " << 3 - test << endl;
-
-    cout << ((test == 3) ? "Task Success " : "Task Failed") << endl;
-
-    //Unit testing for invMixColumns
-    cout << endl;
-    int invTest{};
-    cout << "Unit Testing For InvShiftRows Methods" << endl;
-    cout << "Number of tests: 3" << endl;
-
-    if (invMixColumnsTest1())
-        invTest++;
-    if (invMixColumnsTest2())
-        invTest++;
-    if (invMixColumnsTest3())
-        invTest++;
-
-    cout << "Numbs of test passed " << invTest << "/3" << endl;
-    cout << "Number of test Failed " << 3 - invTest << endl;
-
-    cout << ((invTest == 3) ? "Task Success " : "Task Failed") << endl;
 }
