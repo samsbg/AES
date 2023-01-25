@@ -260,4 +260,24 @@ void invShiftRows(unsigned char state[4][4])
     state[3][3] = temp1;
 }
 
+void subBytes(unsigned char state[4][4])
+{
+    for (int i = 0; i < 4; i++)
+    {
+        for (int j = 0; j < 4; j++)
+        {
+            state[i][j] = sBSubstitution(state[i][j]);
+        }
+    }
+}
 
+void invSubBytes(unsigned char state[4][4])
+{
+    for (int i = 0; i < 4; i++)
+    {
+        for (int j = 0; j < 4; j++)
+        {
+            state[i][j] = invSBSubstitution(state[i][j]);
+        }
+    }
+}
