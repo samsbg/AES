@@ -202,7 +202,7 @@ bool keyTransformationTest5()
         }
     }
 
-      (results, 192);
+      keyTransformation(results, 192);
 
     unsigned char expected[4][4] = {
         {0x00, 0x04, 0x08, 0x0c},
