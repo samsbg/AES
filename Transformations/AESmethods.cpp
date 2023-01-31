@@ -81,7 +81,7 @@ void addRoundKey(unsigned char state[4][4], unsigned char key[4][4])
 // Adjusted to work on 128, 192 or 256 set up in the second parameter
 // Should technically work with other size, but since 256 has special rules, should be on the lookout for that
 // Should later on restrict it to AES 128, 192, 256
-void keyTransformation(unsigned char keys[][4][4], int sizeSelected)
+void   keyTransformation(unsigned char keys[][4][4], int sizeSelected)
 {
     int rcon = 1;
     sizeSelected /= 32;
@@ -260,4 +260,24 @@ void invShiftRows(unsigned char state[4][4])
     state[3][3] = temp1;
 }
 
+void subBytes(unsigned char state[4][4])
+{
+    for (int i = 0; i < 4; i++)
+    {
+        for (int j = 0; j < 4; j++)
+        {
+            state[i][j] = sBSubstitution(state[i][j]);
+        }
+    }
+}
 
+void invSubBytes(unsigned char state[4][4])
+{
+    for (int i = 0; i < 4; i++)
+    {
+        for (int j = 0; j < 4; j++)
+        {
+            state[i][j] = invSBSubstitution(state[i][j]);
+        }
+    }
+}

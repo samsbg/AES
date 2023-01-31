@@ -5,7 +5,7 @@
 
 // These methods are meant to be private and used for the subByte and key transformations methods
 unsigned char sBSubstitution(unsigned char initial);
-unsigned char invSBSubstitution(unsigned char initial);
+unsigned char invSBSubstitution(unsigned char initial); 
 
 // XOR of state and key
 void addRoundKey(unsigned char state[4][4], unsigned char key[4][4]);
@@ -37,4 +37,18 @@ void invShiftRows(unsigned char state[4][4]);
 // Returns: Nothing
 // Notes: This is a private method
 void shiftRows(unsigned char state[4][4]);
+
+// Description: Substitutes the bytes of the state matrix
+// Parameters: state - the state matrix
+// Returns: Nothing
+// Notes: This is a private method
+void subBytes(unsigned char state[4][4]);
+
+// Description: Inverse substitutes the bytes of the state matrix
+// Parameters: state - the state matrix
+// Returns: Nothing
+// Notes: This is a private method
+void invSubBytes(unsigned char state[4][4]);
+
+
 #endif

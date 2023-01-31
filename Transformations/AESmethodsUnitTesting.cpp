@@ -3,6 +3,7 @@
 #include "keyTransformationUnitTesting.cpp"
 #include "mixColumnsUnitTesting.cpp"
 #include "shiftRowsUnitTesting.cpp"
+#include "SubBytesUnitTesting.cpp"
 
 #include <iostream>
 using namespace std;
@@ -292,8 +293,49 @@ int main()
 
     cout << "Inv Shift Rows test " << correctCount << "/" << count << ": " << ((correctCount == count) ? "Success" : "Failed") << endl;
 
+    correctCount = 0;
+    count = 0;
 
+    if (subBytesTest1())
+    {
+        correctCount++;
+        totalCorrectCount++;
+    }
+    count++;
+    totalCount++;
 
+    if (subBytesTest2())
+    {
+        correctCount++;
+        totalCorrectCount++;
+    }
+    count++;
+    totalCount++;
+
+    cout << "Sub Bytes test " << correctCount << "/" << count << ": " << ((correctCount == count) ? "Success" : "Failed") << endl;
+
+    correctCount = 0;
+    count = 0;
+
+    if (invSubBytesTest1())
+    {
+        correctCount++;
+        totalCorrectCount++;
+    }
+    count++;
+    totalCount++;
+
+    if (invSubBytesTest2())
+    {
+        correctCount++;
+        totalCorrectCount++;
+    }
+    count++;
+    totalCount++;
+
+    cout << "Inv Sub Bytes test " << correctCount << "/" << count << ": " << ((correctCount == count) ? "Success" : "Failed") << endl;
+
+    
     cout << " -> AES methods test " << totalCorrectCount << "/" << totalCount << ": " << ((totalCorrectCount == totalCount) ? "Success" : "Failed") << endl;
 
     return 0;
